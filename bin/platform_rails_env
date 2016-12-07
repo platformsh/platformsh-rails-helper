@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "platform_sh"
+if ENV['TMPDIR'] 
+  puts "export TMPDIR=/tmp"
+end
+if PlatformSH::on_platform? && !PlatformSH::is_build_environment?
+  puts "export DATABASE_URL=\"#{PlatformSH::guess_database_url}\""
+end
+if PlatformSH::on_platform? && PlatformSH::is_build_environment?
+  puts "export DB_ADAPTER=nulldb"  
+  puts "DATABASE_URL=nulldb://localhost/nulldb?pool=5"
+end
+puts '
+RAILS_SERVE_STATIC_FILES=true
+RAILS_LOG_TO_STDOUT=true
+SECRET_KEY_BASE=$PLATFORM_PROJECT_ENTROPY
+'
