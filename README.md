@@ -1,4 +1,4 @@
-# Platform.sh Rails Helper
+# Platform.sh Rails Helper ALPHA RELEASE
 platform_sh_rails is a helper gem to ease interacting with the environment of the Platform.sh PaaS on the Ruby on Rails Framework
 
 See the platform_sh gem for vanilla ruby helper
