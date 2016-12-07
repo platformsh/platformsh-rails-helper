@@ -1,6 +1,4 @@
 #!/usr/bin/env ruby
-
-require "bundler/setup"
 require "platform_sh"
 if ENV['TMPDIR'] 
   puts "export TMPDIR=/tmp"
