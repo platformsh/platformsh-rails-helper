@@ -21,6 +21,11 @@ Or install it yourself as:
 
 ## Usage
 
+The gem will autoconfigure rails to use the first relational database it finds. So if you just add this gem to yout Gemfile 
+and push everything should work automagically.
+
+If you have multiple RDBMS in your .platform/services file .. well you should configure by hand.
+
 
 ## Development
 
