@@ -21,10 +21,21 @@ Or install it yourself as:
 
 ## Usage
 
-The gem will autoconfigure rails to use the first relational database it finds. So if you just add this gem to yout Gemfile 
+This gem setups the environment for Rails, it will autoconfigure: 
+
+* ActiveRecord
+* RabbitMQ (using bunny)
+* Redis
+* ElasticSearch
+* Solr
+* Mongodb
+
+The gem will autoconfigure rails to use the first service it finds. So if you just add this gem to yout Gemfile 
 and push everything should work automagically.
 
-If you have multiple RDBMS in your .platform/services file .. well you should configure by hand.
+If you have multiple services of the same type.. or multiple relational databases (like a postgres + a mysql) in your .platform/services file .. well you should configure by hand.
+
+Also note that for ActiveRecord this will default to mysql2, but if you  loaded the mysql Gem it should still work.
 
 
 ## Development
