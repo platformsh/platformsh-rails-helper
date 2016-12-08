@@ -7,7 +7,7 @@ class PlatformSHRailtie < Rails::Railtie
       ENV['TMPDIR']="/tmp"
     end
     if PlatformSH::on_platform? && !PlatformSH::is_build_environment?
-      ENV['DATABASE_URL']=PlatformSH::guess_database_url
+      PlatformSH::export_services_urls
     end
     if PlatformSH::on_platform? && PlatformSH::is_build_environment?
       ENV['DB_ADAPTER']="nulldb"  
