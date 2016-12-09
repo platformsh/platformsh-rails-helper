@@ -1,7 +1,39 @@
 # Platform.sh Rails Helper ALPHA RELEASE
 platform_sh_rails is a helper gem to ease interacting with the environment of the Platform.sh PaaS on the Ruby on Rails Framework
 
-See the platform_sh gem for vanilla ruby helper
+#Rails Quick Start
+
+Create a new rails instance
+
+```
+gem install rails
+rails new myapp
+cd myapp
+```
+
+Or just `cd` to an existing one. Add `gem 'platform_sh_rails'` to your Gemfile
+
+```
+echo "gem 'platform_sh_rails'" >> Gemfile
+bundle install
+```
+
+Init the git repo, if not a git, and set the Platform.sh remote
+```
+git init
+git remote add origin HERE_GOES_YOUR_PLATFORM_SH_GIT_URL
+```
+
+Create the Platform.sh configuration files, push, you are in production
+
+```bash
+rails g platform_config
+git add .platform.app.yaml .platform
+git commit -m'Add platform config'
+git push origin master
+```
+
+>See the platform_sh gem for vanilla ruby helper
 
 ## Installation
 
@@ -37,6 +69,11 @@ If you have multiple services of the same type.. or multiple relational database
 
 Also note that for ActiveRecord this will default to mysql2, but if you  loaded the mysql Gem it should still work.
 
+You can run a local development environment  with remote services with:
+
+    platform_local_tunnel_env rackup
+
+It will open ssh tunnels to all your services and configure them automatically.
 
 ## Development
 
