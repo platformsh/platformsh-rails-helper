@@ -29,9 +29,9 @@ This gem setups the environment for Rails, it will autoconfigure:
 * ElasticSearch
 * Solr
 * Mongodb
+* InfluxDB
 
-The gem will autoconfigure rails to use the first service it finds. So if you just add this gem to yout Gemfile 
-and push everything should work automagically.
+The gem will autoconfigure rails to use the first service it finds. So if you just add this gem to yout Gemfile  and push everything should work automagically. The configuration works by exporting environment variables with the expected names and URL structure.
 
 If you have multiple services of the same type.. or multiple relational databases (like a postgres + a mysql) in your .platform/services file .. well you should configure by hand.
 
