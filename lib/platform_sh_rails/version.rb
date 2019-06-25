@@ -1,3 +1,3 @@
-class PlatformSHRails
-  VERSION = "0.1.9"
+module PlatformSHRails
+  VERSION = "0.1.10"
 end
