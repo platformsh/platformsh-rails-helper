@@ -1,5 +1,6 @@
 require "platform_sh_rails/version"
 require "platform_sh"
+require "uri"
 
 module PlatformSHRails
   # PlatformSH Railtie to load environment 
@@ -20,6 +21,9 @@ module PlatformSHRails
         ENV['RAILS_LOG_TO_STDOUT']="true"
         ENV['SECRET_KEY_BASE']=ENV['PLATFORM_PROJECT_ENTROPY']
       end
-      
+
+      config.before_initialize do
+          PlatformSH::config["routes"].select {|k,v| v["type"]=="upstream"}.keys[0].uniq.each{|url| config.hosts <<  URI.parse(url).host}
+      end
     end
 end
