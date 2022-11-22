@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 APP_PATH = File.expand_path('../config/application', __dir__)
 $LOAD_PATH << Gem.find_files("platform_sh").first.split('/')[0...-1].join('/')
-$LOAD_PATH  << Gem.find_files("platform_sh_rails").first.split('/')[0...-1].join('/') # magically allow to auto-load the platform gem 
+$LOAD_PATH << Gem.find_files("platform_sh_rails").first.split('/')[0...-1].join('/') # magically allow to auto-load the platform gem 
 require_relative '../config/boot'
 require "rails"
 require "platform_sh_rails"
